@@ -21,7 +21,7 @@ function App() {
     useEffect(()=>{
         dataFetch()
       },[])
-  
+  //data added manually as an object as 2nd parameter of the post method
       const postData = ()=>{
         axios.post('http://localhost:3000',{
           name:"Tommaso",
