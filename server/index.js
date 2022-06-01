@@ -45,10 +45,6 @@ router.post('/',async(req,res)=>{
   })
 })
   
-}).catch(err=>{
-  console.log(err)
-})
-
 router.delete('/',async(req,res)=>{
   const dataId = req.body.id
   const data = await ExampleSchema.findOneAndRemove({dataId})
@@ -59,6 +55,9 @@ router.delete('/',async(req,res)=>{
 })
 
 
+}).catch(err=>{
+  console.log(err)
+})
 
 
 app.listen(port,()=>{

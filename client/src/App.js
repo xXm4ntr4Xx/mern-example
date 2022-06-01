@@ -24,9 +24,9 @@ function App() {
   //data added manually as an object as 2nd parameter of the post method
       const postData = ()=>{
         axios.post('http://localhost:3000',{
-          name:"Tommaso",
-          age:34,
-          body:"my name is Tommaso"
+          name:"Kristofer",
+          age:31,
+          body:"my name is Kristofer"
         }).then((response)=>{
           console.log(response)
         }).catch((error)=>{
@@ -48,12 +48,12 @@ function App() {
     <div className="App">
       <h1>hello</h1>
       <ul>
-      {info.map((item)=>{
+      {info.map((item,idx)=>{
         return (
-          <>
-            <li key={item._id}>{item.name}</li>
+          <div key={idx}>
+            <li >{item.name}</li>
             <button onClick={()=>deleteItem(item._id)}>X</button>
-          </>
+          </div>
 
         )
       })}
