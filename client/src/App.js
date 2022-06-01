@@ -33,7 +33,7 @@ function App() {
           console.log(error)
         })
       }
-
+// delete element with the relative id
       const deleteItem = (id)=>{
         axios.delete('http://localhost:3000',{
           data:{
@@ -46,12 +46,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>hello</h1>
       <ul>
       {info.map((item,idx)=>{
         return (
           <div key={idx}>
-            <li >{item.name}</li>
+            <li >User name:  {item.name}</li>
             <button onClick={()=>deleteItem(item._id)}>X</button>
           </div>
 

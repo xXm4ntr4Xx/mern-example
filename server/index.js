@@ -4,6 +4,7 @@ import cors  from 'cors';
 import logger  from 'morgan';
 import mongoose from 'mongoose';
 import ExampleSchema from './models/ExampleSchema.js'
+import 'dotenv/config';
 
 const app = express()
 
@@ -21,7 +22,7 @@ const port = 3000
 app.use('/',router)
 
 //Connect to mongoose
-mongoose.connect("mongodb+srv://pietroannobil:300488@cluster0.se4b4.mongodb.net/ExampleMern?retryWrites=true&w=majority",{
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.se4b4.mongodb.net/${process.env.DB_DATABASENAME}?retryWrites=true&w=majority`,{
   useNewUrlParser:true,
 })
 .then(()=>{
