@@ -18,7 +18,6 @@ app.use(cookieParser());
 const router = express.Router()
 const port = 3000
 
-
 app.use('/',router)
 
 //Connect to mongoose
